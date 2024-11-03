@@ -8,7 +8,7 @@ A workflow is a system for managing repetitive processes and tasks which occur i
 
 ## Install
 
-To install azure-middy, you can use NPM:
+To install node-workflow, you can use NPM:
 
 ```bash
 npm install --save @kevboutin/node-workflow
