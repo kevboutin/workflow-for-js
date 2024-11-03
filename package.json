@@ -12,9 +12,16 @@
         "url": "git+https://github.com/kevboutin/node-workflow.git"
     },
     "scripts": {
-        "format": "npx prettier -w **/*.js",
+        "format": "npx prettier -w **/*.*js",
+        "lint": "npx prettier -c **/*.*js",
+        "pre-commit": "npm run lint && npm run test:lint",
+        "prepare": "git config --local core.hooksPath .githooks",
+        "prettier:check": "npx prettier --list-different \"./**/*.{json,yaml,js,ts}\"",
+        "prettier:fix": "npx prettier -w **/*.*js",
+        "release:tag": "git tag $npm_package_version && git push --tags",
         "start": "node index.js",
-        "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --silent **/*.test.js"
+        "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --silent **/*.test.js",
+        "test:lint": "npx lint-staged"
     },
     "keywords": [
         "javascript",
