@@ -1,0 +1,23 @@
+{
+    "name": "node-workflow",
+    "version": "0.1.0",
+    "description": "Provides a workflow for Node.js",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "format": "npx prettier -w **/*.js",
+        "start": "node index.js",
+        "test": "npm run test"
+    },
+    "keywords": [
+        "javascript",
+        "nodejs",
+        "workflow"
+    ],
+    "author": "Kevin Boutin (kevboutin@gmail.com)",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "prettier": "^3.3.3"
+    }
+}
