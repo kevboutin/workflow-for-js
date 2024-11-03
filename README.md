@@ -29,7 +29,7 @@ As you might have already seen from our example, using workflow is very simple a
 1.  Import `Workflow`.
 
 ```javascript
-import { Workflow } from "./core/workflow.js";
+import { Workflow } from "./workflow.js";
 ```
 
 2.  Write your functions as usual. In our example, we have `uploadImage`, `saveUser` and `sendVerificationEmail`.

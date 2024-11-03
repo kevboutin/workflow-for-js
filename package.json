@@ -7,6 +7,15 @@
     "bugs": {
         "url": "https://github.com/kevboutin/node-workflow/issues"
     },
+    "exports": {
+        "./workflow.js": "./core/workflow.js"
+    },
+    "files": [
+        "core/*.js"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kevboutin/node-workflow.git"
