@@ -11,7 +11,7 @@ A workflow is a system for managing repetitive processes and tasks which occur i
 To install azure-middy, you can use NPM:
 
 ```bash
-npm install --save @kevboutin/workflow
+npm install --save @kevboutin/node-workflow
 ```
 
 ## Example
@@ -33,10 +33,47 @@ import { Workflow } from "./core/workflow.js";
 ```
 
 2.  Write your functions as usual. In our example, we have `uploadImage`, `saveUser` and `sendVerificationEmail`.
+
+```javascript
+const saveUser = async ({ email, password, imageLink }) => {
+    // ...
+};
+```
+
 3.  Create your workflow inside of a try+catch block using `Workflow.createWorkflow()`.
+
+```javascript
+try {
+    // Creating a workflow with a 4 retry limit.
+    Workflow.createWorkflow(4, (workflow) => {
+        // ...
+    });
+} catch (error) {
+    console.error("Error in workflow.", error);
+}
+```
+
 4.  Add each function as a workflow step using `create()`.
+
+```javascript
+workflow.create(async (image) => {
+    // ...
+});
+```
+
 5.  Optionally add a final workflow step using `finally()`. Note that `finally()` will not be retried. Use `create()` if retries are important.
+
+```javascript
+workflow.finally(async ({ email }) => {
+    // ...
+});
+```
+
 6.  Run your workflow using `run()`.
+
+```javascript
+Workflow.run(image);
+```
 
 Steps will be run in the order they are created.
 

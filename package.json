@@ -7,7 +7,7 @@
     "scripts": {
         "format": "npx prettier -w **/*.js",
         "start": "node index.js",
-        "test": "npm run test"
+        "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage **/*.test.js"
     },
     "keywords": [
         "javascript",
