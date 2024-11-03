@@ -75,7 +75,7 @@ workflow.finally(async ({ email }) => {
 Workflow.run(image);
 ```
 
-Steps will be run in the order they are created.
+> **NOTE:** Steps will be run in the order they are created.
 
 ### Handling errors
 
