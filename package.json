@@ -8,10 +8,10 @@
         "url": "https://github.com/kevboutin/node-workflow/issues"
     },
     "exports": {
-        "./workflow.js": "./core/workflow.js"
+        "./workflow.js": "./lib/workflow.js"
     },
     "files": [
-        "core/*.js"
+        "lib/*.js"
     ],
     "publishConfig": {
         "access": "public"

@@ -1,4 +1,4 @@
-import { Workflow } from "./core/workflow.js";
+import { Workflow } from "./lib/workflow.js";
 
 /**
  * @typedef User
