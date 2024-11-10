@@ -1,6 +1,6 @@
-# node-workflow
+# js-workflow
 
-A Node.js workflow engine with retry capabilities.
+A JavaScript workflow engine with retry capabilities.
 
 ## What is a workflow?
 
@@ -8,10 +8,10 @@ A workflow is a system for managing repetitive processes and tasks which occur i
 
 ## Install
 
-To install node-workflow, you can use NPM:
+To install js-workflow, you can use NPM:
 
 ```bash
-npm install --save @kevboutin/node-workflow
+npm install --save @kevboutin/js-workflow
 ```
 
 ## Example

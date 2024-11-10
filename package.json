@@ -1,11 +1,11 @@
 {
-    "name": "node-workflow",
+    "name": "js-workflow",
     "version": "0.1.0",
     "description": "Provides a workflow for Node.js",
     "main": "index.js",
     "type": "module",
     "bugs": {
-        "url": "https://github.com/kevboutin/node-workflow/issues"
+        "url": "https://github.com/kevboutin/js-workflow/issues"
     },
     "exports": {
         "./workflow.js": "./lib/workflow.js"
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kevboutin/node-workflow.git"
+        "url": "git+https://github.com/kevboutin/js-workflow.git"
     },
     "scripts": {
         "format": "npx prettier -w **/*.*js",
