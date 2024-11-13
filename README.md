@@ -1,4 +1,4 @@
-# js-workflow
+# workflow-for-js
 
 A JavaScript workflow engine with retry capabilities.
 
@@ -8,10 +8,10 @@ A workflow is a system for managing repetitive processes and tasks which occur i
 
 ## Install
 
-To install js-workflow, you can use NPM:
+To install workflow-for-js, you can use NPM:
 
 ```bash
-npm install --save @kevboutin/js-workflow
+npm install --save @kevboutin/workflow-for-js
 ```
 
 ## Example
