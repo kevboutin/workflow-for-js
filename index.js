@@ -9,6 +9,18 @@ import { Workflow } from "./lib/workflow.js";
  */
 
 /**
+ * Delete the user.
+ *
+ * @param {Object} params The parameters.
+ * @param {string} params.email The email address.
+ * @returns {void}
+ */
+const deleteUser = async ({ email }) => {
+    await timeout(1000);
+    return;
+};
+
+/**
  * Save the user.
  *
  * @param {Object} params The parameters.
@@ -54,6 +66,17 @@ const timeout = (ms) => {
  */
 
 /**
+ * Delete an image.
+ *
+ * @param {string} imageLink The image URL.
+ * @returns {void}
+ */
+const deleteImage = async (imageLink) => {
+    await timeout(1000);
+    return;
+};
+
+/**
  * Upload an image.
  *
  * @param {Blob} _image The blob.
@@ -71,13 +94,16 @@ const uploadImage = async (_image) => {
  * @param {string} password The password.
  * @param {Blob} image The image blob.
  */
-const register = (email, password, image) => {
+const register = async (email, password, image) => {
+    /** @type {Array<Function>} */
+    const undos = [];
     try {
         // Creating a workflow with a 3 retry limit.
         Workflow.createWorkflow(3, (workflow) => {
             workflow
                 .create(async (image) => {
                     let imageLink = await uploadImage(image);
+                    undos.push(async () => await deleteImage(imageLink));
                     console.log(`Image uploaded to: `, imageLink);
                     return { imageLink };
                 })
@@ -89,6 +115,7 @@ const register = (email, password, image) => {
                         password,
                         imageLink,
                     });
+                    undos.push(async () => await deleteUser({ email }));
                     return user; // { id, email, password, image }
                 })
                 // Only need the email destructured here but we could use all properties if needed.
@@ -100,6 +127,10 @@ const register = (email, password, image) => {
         }).run(image);
     } catch (error) {
         console.error("Error in workflow.", error);
+        // Undo all steps up until the failure.
+        for (const undo of undos.reverse()) {
+            await undo();
+        }
     }
 };
 
