@@ -40,10 +40,10 @@
     "author": "Kevin Boutin (kevboutin@gmail.com)",
     "license": "MIT",
     "devDependencies": {
-        "@commitlint/cli": "^19.5.0",
-        "@commitlint/config-conventional": "^19.5.0",
+        "@commitlint/cli": "^19.6.0",
+        "@commitlint/config-conventional": "^19.6.0",
         "jest": "^29.7.0",
-        "lint-staged": "^15.2.10",
-        "prettier": "^3.3.3"
+        "lint-staged": "^15.2.11",
+        "prettier": "^3.4.2"
     }
 }
