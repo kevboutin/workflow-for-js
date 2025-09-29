@@ -40,7 +40,7 @@
     "author": "Kevin Boutin (kevboutin@gmail.com)",
     "license": "MIT",
     "devDependencies": {
-        "@commitlint/cli": "^19.6.0",
+        "@commitlint/cli": "^20.0.0",
         "@commitlint/config-conventional": "^19.6.0",
         "jest": "^30.0.0",
         "lint-staged": "^16.0.0",
